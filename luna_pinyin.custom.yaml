@@ -1,0 +1,30 @@
+# Rime schema
+# encoding: utf-8
+
+patch:
+  engine:
+    processors:
+      - ascii_composer
+      - recognizer
+      - key_binder
+      - speller
+      - punctuator
+      - selector
+      - navigator
+      - express_editor
+    segmentors:
+      - ascii_segmentor
+      - matcher
+      - abc_segmentor
+      - punct_segmentor
+      - fallback_segmentor
+    translators:
+      - punct_translator
+      - table_translator@custom_phrase
+      - reverse_lookup_translator
+      - script_translator
+    filters:
+      - simplifier
+      - uniquifier
+      - lua_filter@*rime_lua_water
+      
