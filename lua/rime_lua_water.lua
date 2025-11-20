@@ -280,6 +280,15 @@ function M.func(input, env)
                 "👋" -- 注释
             ))
         end
+    else
+        log("No candidates found, adding empty candidate")
+        table.insert(candidates, 1, Candidate(
+            "custom", -- 候选类型
+            0, -- 起始位置
+            1000, -- 结束位置
+            "", -- 候选文本
+            "👋" -- 注释
+        ))
     end
 
     -- 返回所有候选词
